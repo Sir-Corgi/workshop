@@ -66,9 +66,14 @@ cat rfdiffusion_hp1.sh
 Change the scripts to match with the potential hotspots, you can run:
 
 ```bash
-sed -i 's/placeholder/A0,A5,A9,A10,A11,A12/g' rfdiffusion_hp1.sh
+sed -i 's/placeholder/A5,A9,A10,A11,A12/g' rfdiffusion_hp1.sh
 sed -i 's/placeholder/B5,B8,B9,B10,B11/g' rfdiffusion_hp2.sh
 ```
+#### Note
+I already have identified some hotspots of the protein we're currently working on, [2QUD](https://www.rcsb.org/structure/2QUD), PP7 bacteriophage coat protein in complex, a part of [1DWN](https://www.rcsb.org/structure/1DWN):
+![identified hotpots of 2QUD](assets/hotspot_2qud_2.png)
+- pink: hotspot 1, residues: A5,A9,A10,A11,A12
+- green: hotspot 2, residues: B5,B8,B9,B10,B11
 
 To visualise the change of the script, you can run to following to confirm the changes:
 
