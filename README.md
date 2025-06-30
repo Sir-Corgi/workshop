@@ -103,5 +103,4 @@ Advanced users:
 ------
 
 ## AlphaFold3
-On to the second part of the workshop.
-
+On to the second part of the workshop. I've provided you with the fasta files and json files to run AlphaFold3.
