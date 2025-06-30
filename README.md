@@ -1,12 +1,6 @@
 # Workshop
 Workshop Atelier, de novo binding-protein and nanobody design
 ------
-## Workflow
-
-```mermaid
-placeholder
-```
-
 ## Install
 To follow this workshops workflow, install the following, onto your laptop or computer:
 - [PyMOL](https://www.pymol.org/)
@@ -34,12 +28,21 @@ ls workshop
 cd workshop
 ls
 ```
+-----
+## Workflow
 
+```mermaid
+graph TD
+    A[RFdiffusion] --> B[Input Files Preparation]
+    B --> C[Edit Diffusion Scripts]
+    C --> D[Run RFdiffusion]
+    D --> E[Visualize Results in PyMOL]
+```
 -----
 
 ## RFdiffusion
 
-### Additional file building
+### 1.1 Additional file building
 RFdiffusion needs additional files to interpret the geometry and topology of the target protein, guiding the structure generation/design around it.
 You will need to run the following:
 
@@ -53,7 +56,7 @@ This will generate two different files:
 - `*adj.pt`: the adjacency matrix (as a PyTorch tensor), encoding spatial proximity of residues.
 - `*ss.pt`: the secondary structure annotations, often derived from DSSP.
 
-### Updating the running script
+### 1.2 Updating the running script
 Run the following to view the script we'll run for the RFdiffusion for a binder-protein for our target protein:
 
 ```bash
@@ -74,7 +77,7 @@ cat rfdiffusion_hp1.sh
 ```
 *Can you spot the difference?*
 
-### Running RFdiffusion
+### 1.3 Running RFdiffusion
 Now we are all set to run the diffusion script. This step will take around 6 minutes to generate a binding-protein.
 
 ```bash
@@ -84,7 +87,7 @@ sbatch rfdiffusion_hp2.sh
 
 You can view the progress by running: `squeue --me`.
 
-### Visualisation of the binding-protein
+### 1.4 Visualisation of the binding-protein
 After running RFdiffusion you can now visualise the `pdb` files using PyMOL.
 
 ```bash
