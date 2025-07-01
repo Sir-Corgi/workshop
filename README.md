@@ -22,6 +22,9 @@ You can move around the directory using:
 - `ls` (look in a directory).
 	- Followed by either the directory you want to look into.
 	- Followed by .. (double dot) to see one directory back.
+
+Please check the box in the bottom left corner that says "Follow terminal folder". This will allow you to click and open files using the mouse.
+
 Run the following
 ```bash
 ls workshop
@@ -111,4 +114,67 @@ Advanced users:
 ------
 
 ## AlphaFold3
-On to the second part of the workshop. I've provided you with the fasta files and json files to run AlphaFold3.
+I've provided you with the fasta files and json files to run AlphaFold3. You can either copy and paste the sequences into the [webserver of alphafold3](https://alphafoldserver.com/) or you can run them on the HPC (high preformance computer) ALICE. The locally installed requires another type of input that I have provided in the [input folder](binding-protein/alphafold3/) and is called `alphafold3input.json`.
+
+### Workflow
+
+```mermaid
+graph TD
+    A[Start AlphaFold3 Workflow] --> B[Choose Run Method: Online or HPC]
+    B --> C[Prepare Input Files, FASTA or JSON]
+    C --> D[Run AlphaFold3 Prediction]
+    D --> E[View Output Files .pdb]
+    E --> F[Visualize & Evaluate Predicted Complex]
+    F --> G[End]
+```
+
+
+### 2.0 Running online 
+- Copy the fasta sequences of `2qud.fasta`, `binder_hp1.fasta` and, `binder_hp2.fasta` in the alphafold3 folder.
+- Paste the sequence for 2qud and one of the two binding-proteins.
+- Run en preview the job.
+	- Repeat step 2 for the other binding-protein.
+- Review the complex:
+	- What do you see?
+	- Did AF3 predict the bindingsite like in the first part of the workshop?
+#### Note
+Do you want to learn more about alphafold3 and what you can do with it dont hesitate to ask, there is also a more detailed workshop given "Using AlphaFold on local HPC ALICE for upscaling and better predictions".
+
+### 2.1 Running on HPC
+First move to the right folder (directory) using the command `cd`. Using `ls` you can look in the directory youre currently in.
+
+```bash
+ls
+cd ../alphafold3
+```
+#### 2.2
+View the `.json` files.
+
+```bash
+cat *.json
+```
+This is the format AF3 wants to have the sequences inputted.
+
+#### 2.3
+Now we are ready to run the AF3 prediction.
+```bash
+sbatch afprediction_hp1.sh
+sbatch afprediction_hp2.sh
+```
+This will take around 10-45mins to complete, hence I have prepared the output for you.
+
+#### 2.4
+Now move to the output folder
+```bash
+cd output
+ls
+```
+There are two folders each containing all the run details and files of each prediction, you can use the left side of MobaXterm to double click and open de folders and also the `.pdb` files.
+- What do you see?
+- Did AF3 predict the bindingsite like in the first part of the workshop?
+
+*You can close pymol again*
+
+## HADDOCK3
+
+
