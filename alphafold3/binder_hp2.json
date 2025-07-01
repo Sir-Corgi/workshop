@@ -1,0 +1,20 @@
+[
+    {
+        "name": "hp5_output_2",
+        "modelSeeds": [],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "GGSMSKTIVLSVGEATRTLTEIQSTADRQIFEEKVGPLVGRLRLTASLRQNGAKTAYRVNLKLDQADVVDSGLPKVRYTQVWSHDVTIVANSTEASRKSLYDLTKSLVATSQVEDLVVNLVPLGR",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "SEARLAALRERLAAGAREVREVLRELREKCERALEEAEKYKEDEELHEQLIREIEEALREARERIEEVEREMVAAQDELGASSGEAVAGARLAKREAVALAGAVRAEIRARVAARK",
+                    "count": 1
+                }
+            }
+        ]
+    }
+]

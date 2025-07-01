@@ -1,0 +1,20 @@
+[
+    {
+        "name": "2qud_hp1",
+        "modelSeeds": [],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "GGSMSKTIVLSVGEATRTLTEIQSTADRQIFEEKVGPLVGRLRLTASLRQNGAKTAYRVNLKLDQADVVDSGLPKVRYTQVWSHDVTIVANSTEASRKSLYDLTKSLVATSQVEDLVVNLVPLGR",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "SEEERRRREEELRERRKEMSELRRRMERALAELERRGGPEEVKALVSEAIGAASDAEWALDRALREGRDLYEEAEELEREARELARRAEEALRAL",
+                    "count": 1
+                }
+            }
+        ]
+    }
+]
