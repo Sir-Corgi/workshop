@@ -312,14 +312,14 @@ Are the passive residues well-defined?
 Next up are the ambiguous restraints which are used when we know the general region of interaction but not the exact atoms or residues. Instead of forcing one specific contact, we give HADDOCK a group of possible contacts, letting it choose the best fit during docking while still staying within the known interaction area. You can view the `.actpass` files where I've pasted in the passive and active residues.
 
 ```bash
-cat *.actpass
+cat restraints/*.act-pass
 ```
 
 ### 3.7 Ambiguous interaction restrains (AIRs)
-Using the previous two files you can make an AIRs file, which will help with the docking process. This is the `ambig-paratope-NMR-epitope.tbl` file.
+Using the previous two files you can make an AIRs file, which will help with the docking process. This is the `ambig-paratope-NMR-epitope.tbl` file in the `restraints` folder.
 
 #### 3.8 Additional restaints for multi-chain proteins
-As this is an antibody, which consists of two chains, its important to define restraints to keep them together. This is the `antibody-unambig.tbl` file.
+As this is an antibody, which consists of two chains, its important to define restraints to keep them together. This is the `antibody-unambig.tbl` file in the `restraints` folder.
 
 ### 3.9 Running HADDOCK3
 Now we have all the files ready to start the docking process. The HADDOCK3 workflow is the following:
@@ -346,6 +346,7 @@ cat docking-antibody-antigen.cfg
 When everything is ready you would execute the HADDOCK3 workflow using `haddock3 <configuration_file>`. As the docking takes a long time, we'll not run this step.
 
 ### 3.10 Analysis
+
 
 
 
