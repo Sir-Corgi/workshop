@@ -145,7 +145,7 @@ First move to the right folder (directory) using the command `cd`. Using `ls` yo
 
 ```bash
 ls
-cd ../alphafold3
+cd ../../alphafold3
 ```
 #### 2.2
 View the `.json` files.
