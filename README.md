@@ -1,6 +1,13 @@
 # Workshop
 Welcome to the workshop, we're happy to have you.
-In this workshop we'll do protein-protein docking using HADDOCK3, de novo binding-protein and nanobody design.
+In this workshop we'll do antibody-antigen docking using HADDOCK3, de novo binding-protein and nanobody design.
+You can choose what you want to do!
+
+You can start with either:
+- 1.0 Binding-protein design, RFdiffusion
+	- 2.0 Alphafold3
+- 3.0 Antibody-Antigen docking, HADDOCK3
+- 4.0 Nanobody design, RFantibody
 
 ------
 
