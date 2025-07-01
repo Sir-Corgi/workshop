@@ -43,7 +43,7 @@ graph TD
 ```
 -----
 
-## RFdiffusion
+## 1.0 RFdiffusion
 
 ### 1.1 Additional file building
 RFdiffusion needs additional files to interpret the geometry and topology of the target protein, guiding the structure generation/design around it.
@@ -113,7 +113,7 @@ Advanced users:
 
 ------
 
-## AlphaFold3
+## 2.0 AlphaFold3
 I've provided you with the fasta files and json files to run AlphaFold3. You can either copy and paste the sequences into the [webserver of alphafold3](https://alphafoldserver.com/) or you can run them on the HPC (high preformance computer) ALICE. The locally installed requires another type of input that I have provided in the [input folder](binding-protein/alphafold3/) and is called `alphafold3input.json`.
 
 ### Workflow
@@ -127,9 +127,7 @@ graph TD
     E --> F[Visualize & Evaluate Predicted Complex]
     F --> G[End]
 ```
-
-
-### 2.0 Running online 
+### 2.1 Running online 
 - Copy the fasta sequences of `2qud.fasta`, `binder_hp1.fasta` and, `binder_hp2.fasta` in the alphafold3 folder.
 - Paste the sequence for 2qud and one of the two binding-proteins.
 - Run en preview the job.
@@ -140,14 +138,14 @@ graph TD
 #### Note
 Do you want to learn more about alphafold3 and what you can do with it dont hesitate to ask, there is also a more detailed workshop given "Using AlphaFold on local HPC ALICE for upscaling and better predictions".
 
-### 2.1 Running on HPC
+### 2.2 Running on HPC
 First move to the right folder (directory) using the command `cd`. Using `ls` you can look in the directory youre currently in.
 
 ```bash
 ls
 cd ../../alphafold3
 ```
-#### 2.2
+#### 2.3
 View the `.json` files.
 
 ```bash
@@ -155,7 +153,7 @@ cat *.json
 ```
 This is the format AF3 wants to have the sequences inputted.
 
-#### 2.3
+#### 2.4
 Now we are ready to run the AF3 prediction.
 ```bash
 sbatch afprediction_hp1.sh
@@ -163,7 +161,7 @@ sbatch afprediction_hp2.sh
 ```
 This will take around 10-45mins to complete, hence I have prepared the output for you.
 
-#### 2.4
+#### 2.5
 Now move to the output folder
 ```bash
 cd output
@@ -176,5 +174,4 @@ There are two folders each containing all the run details and files of each pred
 *You can close pymol again*
 
 ## HADDOCK3
-
 
