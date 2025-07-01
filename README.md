@@ -11,12 +11,11 @@ To follow this workshops workflow, install the following, onto your laptop or co
 
 ## Download
 Download the files by cloning the github onto alice:
-- [Nanobody](nanobody/)
-- [Binding-protein](binding-protein/)
 
 ```bash
 git clone https://github.com/Sir-Corgi/workshop.git
 ```
+
 This will generate a new folder you can can work in with all the files you need.
 You can move around the directory using:
 - `cd` (change directory).
@@ -35,7 +34,10 @@ cd workshop
 ls
 ```
 -----
-## Workflow
+
+## 1.0 RFdiffusion
+
+### Workflow
 
 ```mermaid
 graph TD
@@ -44,9 +46,6 @@ graph TD
     C --> D[Run RFdiffusion]
     D --> E[Visualize Results in PyMOL]
 ```
------
-
-## 1.0 RFdiffusion
 
 ### 1.1 Additional file building
 RFdiffusion needs additional files to interpret the geometry and topology of the target protein, guiding the structure generation/design around it.
@@ -78,6 +77,7 @@ sed -i 's/placeholder/B5,B8,B9,B10,B11/g' rfdiffusion_hp2.sh
 #### Note
 I already have identified some hotspots of the protein we're currently working on, [2QUD](https://www.rcsb.org/structure/2QUD), PP7 bacteriophage coat protein in complex, a part of [1DWN](https://www.rcsb.org/structure/1DWN):
 ![identified hotpots of 2QUD](assets/hotspot_2qud_2.png)
+Identified hotspots of 2QUD
 - purple and light blue: 2QUD as homodimer.
 - pink: hotspot 1, residues: A5,A9,A10,A11,A12.
 - yellow: hotspot 2, residues: B5,B8,B9,B10,B11.
@@ -121,6 +121,7 @@ Advanced users:
 I've provided you with the fasta files and json files to run AlphaFold3. You can either copy and paste the sequences into the [webserver of alphafold3](https://alphafoldserver.com/) or you can run them on the HPC (high preformance computer) ALICE. The locally installed requires another type of input that I have provided in the [input folder](binding-protein/alphafold3/) and is called `alphafold3input.json`.
 
 ![AlphaFold3_prediction](assets/af3_combined.png)
+AlphaFold3 prediction of a target protein and de novo generated binding-protein with interaction prediction.
 - Blue: target protein
 - Purple: de novo binding-protein
 - Light blue and pink: predicted interacting residues.
@@ -189,8 +190,30 @@ Why use HADDOCK3 instead of the HADDOCK2.4?
 - High-throughput docking
 - Input flexibility
 - More customisable
+`cd` into the haddock3 folder:
+```bash
+cd ../haddock3
+ls
+```
 
-#### Workflow
+![Docked proteins DRAM1-DRAM1](assets/haddock.png)
+Docked model of 4G6K and 4I1B using HADDOCK3
+- Pink: heavy chain 4G6K
+	- 4G6K, Specific monoclonal antibody gevokizumab
+- Red: light chain 4G6K
+- Blue: target protein 4I1B
+	- 4I1B, Interleukin-1β (IL-1β)
+
+### Workflow
+
+```mermaid
+graph TD
+    A[Start HADDOCK3 Workflow] --> B[Prepare PDB Structures, Antibody & Antigen]
+    B --> C[Define Restraints, Active, Passive, Ambiguous]
+    C --> D[Generate AIRs and Configuration Files]
+    D --> E[Run HADDOCK3 Docking Pipeline]
+    E --> F[Analyze and Visualize Docking Results]
+```
 
 ### 3.1 Installation
 Before starting the docking we need to install another tool called [pdb_tools](https://github.com/haddocking/pdb-tools/tree/master).
