@@ -108,11 +108,11 @@ AlphaFold3 prediction of a target protein and de novo generated binding-protein 
 ## Workflow
 ```mermaid
 graph TD
-    A[Start AlphaFold3 Workflow] --> B[Choose Run Method: Online or HPC]
-    B --> C[Prepare Input Files, FASTA or JSON]
+    A[Start AlphaFold3 Workflow] --> B[Choose Run Method<br>Online or HPC]
+    B --> C[Prepare Input File,<br>FASTA or JSON]
     C --> D[Run AlphaFold3 Prediction]
     D --> E[View Output Files .pdb]
-    E --> F[Visualize & Evaluate Predicted Complex]
+    E --> F[Visualize &<br>Evaluate Predicted Complex]
     F --> G[End]
 ```
 ## 2.1 Running online 
