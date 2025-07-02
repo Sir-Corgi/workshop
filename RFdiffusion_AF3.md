@@ -107,6 +107,7 @@ graph TD
 - Review the complex:
 	- What do you see?
 	- Did AF3 predict the bindingsite like in the first part of the workshop?
+
 ### Note
 Do you want to learn more about alphafold3 and what you can do with it dont hesitate to ask, there is also a more detailed workshop given "Using AlphaFold on local HPC ALICE for upscaling and better predictions".
 
@@ -117,7 +118,7 @@ First move to the right folder (directory) using the command `cd`. Using `ls` yo
 ls
 cd ../../alphafold3
 ```
-### 2.3
+### 2.3 JSON generation
 View the `.json` files.
 
 ```bash
@@ -125,7 +126,7 @@ cat *.json
 ```
 This is the format AF3 wants to have the sequences inputted.
 
-### 2.4
+### 2.4 Running RFdiffusion
 Now we are ready to run the AF3 prediction.
 ```bash
 sbatch afprediction_hp1.sh
@@ -133,7 +134,7 @@ sbatch afprediction_hp2.sh
 ```
 This will take around 10-45mins to complete, hence I have prepared the output for you.
 
-### 2.5
+### 2.5 Visualisation
 Now move to the output folder
 ```bash
 cd output
