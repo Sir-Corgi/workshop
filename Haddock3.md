@@ -169,3 +169,32 @@ cat docking-antibody-antigen.cfg
 When everything is ready you would execute the HADDOCK3 workflow using `haddock3 docking-antibody-antigen.cfg`. As the docking takes a long time, we'll not run this step.
 
 ## 3.11 Analysis
+You can view the results online [here](https://sir-corgi.github.io/workshop/haddock3/Analysis-report.html).
+
+The relavant statistics are:
+- Score: HADDOCK score, a numerical value that represents the quality of a protein-ligand complex generated.
+- IRMSD: Interface RMSD, calculated over the interfaces the molecules.
+- FNAT: Fraction of native contacts.
+- LRMSD: Ligand RMSD, calculated on the ligand after fitting on the receptor (1st component)
+- ILRMSD: Interface-ligand RMSD, calculated over the interface of the ligand after fitting on the interface of the receptor (more relevant for small ligands for example)
+- DOCKQ: A combination of IRMSD, LRMSD and FNAT and provides a continuous scale between 1 (exactly equal to reference) and 0
+- BSA: Buried surface area (in squared angstroms)
+- ELEC: Intermolecular electrostatic energy
+- VDW: Intermolecular van der Waals energy
+- Desolv: Desolvation energy
+
+*Inspect the final cluster statistics*
+- Look at the score of the first few clusters: Are they significantly different if you consider their average scores and standard deviations?
+- What is the rank of the best cluster generated?
+- What is the rank of the first acceptable of better cluster generated?
+
+*Examine the plots*
+- For this antibody-antigen case, which of the score components correlates best with the quality of the models?
+
+> [!NOTE]
+> Remember here that higher DockQ values and lower i-RMSD values correspond to better models.
+
+## 3.12 END
+So to wrap up this is the usage of HADDOCK3 in an antibody-antigen docking scenario and using paratope and epitope information.
+
+
