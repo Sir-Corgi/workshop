@@ -24,11 +24,11 @@ Docked model of 4G6K and 4I1B using HADDOCK3
 
 ```mermaid
 graph TD
-    A[Start HADDOCK3 Workflow] --> B[Prepare PDB Structures, Antibody & Antigen]
-    B --> C[Define Restraints, Active, Passive, Ambiguous]
-    C --> D[Generate AIRs and Configuration Files]
-    D --> E[Run HADDOCK3 Docking Pipeline]
-    E --> F[Analyze and Visualize Docking Results]
+    A[Start<br>HADDOCK3 Workflow] --> B[Prepare<br>PDB Structures,<br>Antibody & Antigen]
+    B --> C[Define Restraints:<br>Active, Passive,<br>Ambiguous]
+    C --> D[Generate AIRs<br>and Config Files]
+    D --> E[Run HADDOCK3<br>Docking Pipeline]
+    E --> F[Analyze &<br>Visualize Results]
 ```
 
 ## 3.1 Installation
