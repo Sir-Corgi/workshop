@@ -59,7 +59,7 @@ ls
 Now you can chose to follow one of the modules I have prepared for you! 
 - Binding-protein design, RFdiffusion: please follow these [instructions](RFdiffusion_AF3.md).
 	- Alphafold3
-- Antibody-Antigen docking, HADDOCK3: please follow these [instractions](Haddock3.md).
+- Antibody-Antigen docking, HADDOCK3: please follow these [instructions](Haddock3.md).
 - Nanobody design, RFantibody: please follow these [instructions]().
 
 Have fun, and dont hesitate to ask questions!
