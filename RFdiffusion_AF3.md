@@ -161,7 +161,11 @@ Now move to the output folder
 cd output
 ls
 ```
-There are two folders each containing all the run details and files of each prediction, you can use the left side of MobaXterm to double click and open de folders and also the `.pdb` files.
+There are two folders each containing all the run details and files of each prediction, you can use the left side of MobaXterm to double click and open de folders and also the `.cif` files.
+
+> [!NOTE]
+> CIF files are standard text files used for crystallographic information. Both PDB and CIF can be viewed with PyMOL.
+
 - What do you see?
 - Did AF3 predict the bindingsite like in the first part of the workshop?
 
