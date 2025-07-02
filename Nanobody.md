@@ -38,7 +38,7 @@ So how does it really look, I've provided a nanobody framework PDB in HLT format
 You can run the following in the terminal to view the file, after move yourself into the right folder:
 
 ```bash
-cd rfantibody
+cd ../rfantibody
 cat h-NbBCII10.pdb
 ```
 - All the way at the bottom you can see the additional information, added to the PDB, needed by the pipeline.
