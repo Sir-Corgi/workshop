@@ -92,7 +92,7 @@ Let's go through the proteinMPNN command in more detail:
 - omit_AAs: A string of all residue types (one letter case-insensitive) that you would not like to use for design. Letters not corresponding to residue types will be ignored
 - num_connections: Number of neighbors each residue is connected to, default 48, higher number leads to better interface design but will cost more to run the model
 
-## 4.4 RF2 (RoseTTAFOLD2)
+## 4.4 RF2 (RoseTTAFold2)
 
 The final step of the RFantibody pipeline is to use our antibody-finetuned RF2 to predict the structure of the sequences we just designed. We then assess whether RF2 is confident that the sequence will bind as we designed.
 By default this will run with 10 recycling iterations and with 10% of hotspots provided to the model. 
