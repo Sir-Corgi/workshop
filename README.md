@@ -18,31 +18,34 @@ To follow this workshops workflow, install the following, onto your laptop or co
 	- Log in using the instructions laying around.
 
 
-## Download
-### 1.0 lets create your own folder:
+## Setup
+### 1.0 Folder creation
+Lets create your own folder:
 
 ```bash
 mkdir <your_name>
 ```
 > [!NOTE]
-> Please change the <your_name> to your own name
+> Please change the <your_name> to your own name!
 
 
-### 2.0 Then move into your freshly made folder by running:
+### 2.0 Moving into the folder
+Then move into your freshly made folder by running:
 
 ```bash
 cd <your_name>
 ```
 > [!NOTE]
-> Please change the <your_name> to your own name
+> Please change the <your_name> to your own name!
 
 
-### 3.0 Download the files by cloning the github onto alice:
+### 3.0 Download files
+We will download the files by cloning the github repository onto alice:
+This will generate a new folder you can can work in with all the files you need.
 
 ```bash
 git clone https://github.com/Sir-Corgi/workshop.git
 ```
-This will generate a new folder you can can work in with all the files you need.
 
 > [!NOTE]
 > You can move around the directory using:
