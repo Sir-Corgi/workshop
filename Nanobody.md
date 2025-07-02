@@ -112,7 +112,7 @@ At it's simplest, RF2 may be run on a directory of HLT-formatted `.pdb` files us
 ```
 # From inside of the rfantibody container
 
-poetry run python /home/scripts/rf2_predict.py \
+python /home/scripts/rf2_predict.py \
     input.pdb_dir=/path/to/inputdir \
     output.pdb_dir=/path/to/outputdir
 ```
