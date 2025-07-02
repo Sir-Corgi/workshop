@@ -5,7 +5,7 @@ Why use HADDOCK3 instead of the HADDOCK2.4?
 - Input flexibility
 - More customisable
 
-`cd` into the haddock3 folder:
+Move yourself, using `cd`, into the haddock3 folder:
 
 ```bash
 cd ../haddock3
@@ -93,7 +93,7 @@ Can you identify the H3 (heavy) loop? (the H3 loop is typically the longest loop
 show surface
 ```
 Are the paratope residues well-defined on the surface?
-*Keep this file open*
+*you can close this PyMOL session*
 
 ## 3.5 Identifying the antigens epitope
 You can use various tools to predict the epitope of the antigen or NMR chemical shift titration experiments to map the epitope site. I already have prepared the list:
