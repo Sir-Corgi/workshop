@@ -17,6 +17,7 @@ You will need to run the following:
 
 ```bash
 module load Miniconda3/24.7.1-0
+conda activate /data1/projects/pi-vriesendorpb/condaEnvs/SE3nv
 cd workshop/binding-protein/input/
 python /data1/projects/pi-vriesendorpb/shared/RFdiffusion_forked/helper_scripts/make_secstruc_adj.py --input_pdb 2qud.pdb --out_dir ./
 ```
