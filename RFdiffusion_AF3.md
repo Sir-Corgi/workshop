@@ -27,18 +27,7 @@ This will generate two different files:
 - `*ss.pt`: the secondary structure annotations, often derived from DSSP.
 
 ## 1.2 Updating the running script
-Run the following to view the script we'll run for the RFdiffusion for a binder-protein for our target protein:
 
-```bash
-cat rfdiffusion_hp1.sh
-```
-
-Change the scripts to match with the potential hotspots, you can run:
-
-```bash
-sed -i 's/placeholder/A5,A9,A10,A11,A12/g' rfdiffusion_hp1.sh
-sed -i 's/placeholder/B5,B8,B9,B10,B11/g' rfdiffusion_hp2.sh
-```
 > [!NOTE]
 > I already have identified some hotspots of the protein we're currently working on, [2QUD](https://www.rcsb.org/structure/2QUD), PP7 bacteriophage coat protein in complex, a part of [1DWN](https://www.rcsb.org/structure/1DWN):
 > ![identified hotpots of 2QUD](assets/hotspot_2qud_2.png)
@@ -59,7 +48,21 @@ Hotspots are a feature added to RFdiffusion to allow for control over the site o
 > What is Cbeta distance?
 > It is the spatial distance between the Cβ (c(carbon)beta) atoms of two amino acid residues.
 
-## Back to the workshop, Updating the running script
+## 1.2 Updating the running script
+
+Run the following to view the script we'll run for the RFdiffusion for a binder-protein for our target protein:
+
+```bash
+cat rfdiffusion_hp1.sh
+```
+
+Change the scripts to match with the potential hotspots, you can run:
+
+```bash
+sed -i 's/placeholder/A5,A9,A10,A11,A12/g' rfdiffusion_hp1.sh
+sed -i 's/placeholder/B5,B8,B9,B10,B11/g' rfdiffusion_hp2.sh
+```
+
 To visualise the change we just made in the script, you can run to following to confirm the changes:
 
 ```bash
@@ -81,7 +84,7 @@ You can view the progress by running: `squeue --me`.
 After running RFdiffusion you can now visualise the `pdb` files using PyMOL.
 
 ```bash
-cd ../output
+cd output/
 ```
 
 Now on the left of the screen you can see the files, dubble click the pdb files. the file will open in PyMOL.
@@ -118,6 +121,7 @@ graph TD
 ```
 ## 2.1 Running online 
 - Copy the fasta sequences of `2qud.fasta`, `binder_hp1.fasta` and, `binder_hp2.fasta` in the alphafold3 folder.
+- Go to the [AlphaFold3 server webpage](https://alphafoldserver.com/)
 - Paste the sequence for 2qud and one of the two binding-proteins.
 - Run en preview the job.
 	- Repeat step 2 for the other binding-protein.
@@ -149,7 +153,7 @@ Now we are ready to run the AF3 prediction.
 sbatch afprediction_hp1.sh
 sbatch afprediction_hp2.sh
 ```
-This will take around 10-45mins to complete, hence I have prepared the output for you.
+This will take around 5 minutes. After 5 minutes you move on to the next step.
 
 ### 2.5 Visualisation
 Now move to the output folder
