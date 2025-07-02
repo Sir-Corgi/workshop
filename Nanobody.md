@@ -77,20 +77,20 @@ This will design all CDR loops and will provide one sequence per input structure
 python /home/scripts/proteinmpnn_interface_design.py --help
 ```
 Let's go through the proteinMPNN command in more detail:
-  -pdbdir: The name of a directory of pdbs to run through the model
-  -quiver: The name of a quiver file to run this metric on.
-  -outquiver: The name of the quiver file to which output structs will be written
-  -outpdbdir: The directory to which the output PDB files will be written
-  -runlist: The path of a list of pdb tags to run (default: ''; Run all PDBs
-  -checkpoint_name: The name of a file where tags which have finished will be written (default: check.point)
-  -debug: When active, errors will cause the script to crash and the error message to be printed out (default: False)
-  -loop_string: The list of loops which you wish to design
-  -seqs_per_struct: The number of sequences to generate for each structure (default: 1)
-  -temperature: An a3m file containing the MSA of your target
-  -augment_eps: The variance of random noise to add to the atomic coordinates (default 0)
-  -protein_features: What type of protein features to input to ProteinMPNN (default: full)
-  -omit_AAs: A string of all residue types (one letter case-insensitive) that you would not like to use for design. Letters not corresponding to residue types will be ignored
-  -num_connections: Number of neighbors each residue is connected to, default 48, higher number leads to better interface design but will cost more to run the model
+- pdbdir: The name of a directory of pdbs to run through the model
+- quiver: The name of a quiver file to run this metric on.
+- outquiver: The name of the quiver file to which output structs will be written
+- outpdbdir: The directory to which the output PDB files will be written
+- runlist: The path of a list of pdb tags to run (default: ''; Run all PDBs
+- checkpoint_name: The name of a file where tags which have finished will be written (default: check.point)
+- debug: When active, errors will cause the script to crash and the error message to be printed out (default: False)
+- loop_string: The list of loops which you wish to design
+- seqs_per_struct: The number of sequences to generate for each structure (default: 1)
+- temperature: An a3m file containing the MSA of your target
+- augment_eps: The variance of random noise to add to the atomic coordinates (default 0)
+- protein_features: What type of protein features to input to ProteinMPNN (default: full)
+- omit_AAs: A string of all residue types (one letter case-insensitive) that you would not like to use for design. Letters not corresponding to residue types will be ignored
+- num_connections: Number of neighbors each residue is connected to, default 48, higher number leads to better interface design but will cost more to run the model
 
 ## 4.4 RF2 (RoseTTAFOLD2)
 
