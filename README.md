@@ -24,12 +24,18 @@ To follow this workshops workflow, install the following, onto your laptop or co
 ```bash
 mkdir <your_name>
 ```
+> [!NOTE]
+> Please change the <your_name> to your own name
+
 
 ### 2.0 Then move into your freshly made folder by running:
 
 ```bash
 cd <your_name>
 ```
+> [!NOTE]
+> Please change the <your_name> to your own name
+
 
 ### 3.0 Download the files by cloning the github onto alice:
 
