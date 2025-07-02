@@ -87,8 +87,9 @@ After running RFdiffusion you can now visualise the `pdb` files using PyMOL.
 cd output/
 ```
 
-Now on the left of the screen you can see the files, dubble click the pdb files. the file will open in PyMOL.
-- How does it look?
+Now on the left of the screen you can see the files, double click the pdb files, the file will open in PyMOL.
+There are also two `.png` files, which can also be viewed. These contain the PAE and pLDDT graphs:
+- How does the AlphaFold3 prediction look?
 - Did it generate a binding-protein near the hotspot?
 - Is there a difference between the hp1 and hp2?
 - When viewing the protein sequence (click on the `seq` button in the right bottom corner), what do you notice about the sequence of the binding-protein, compared to the target protein?
