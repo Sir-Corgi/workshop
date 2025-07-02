@@ -87,13 +87,14 @@ color white, all
 select paratope, (resi 31+32+33+34+35+52+54+55+56+100+101+102+103+104+105+106+151+152+169+170+173+211+212+213+214+216)
 color red, paratope
 ```
-Can you identify the H3 (heavy) loop? (the H3 loop is typically the longest loop)
+- Can you identify the H3 (the H3 (heavy) loop is typically the longest loop) loop? 
 
 ```python
 show surface
 ```
 Are the paratope residues well-defined on the surface?
-*you can close this PyMOL session*
+
+*You can close this PyMOL session*
 
 ## 3.5 Identifying the antigens epitope
 You can use various tools to predict the epitope of the antigen or NMR chemical shift titration experiments to map the epitope site. I already have prepared the list:
@@ -112,6 +113,7 @@ color red, epitope
 show surface
 ```
 Are the epitope residues well-defined on the surface?
+
 *Keep this file open* 
 
 ## 3.6 Passive and active residues
@@ -125,6 +127,7 @@ select passive, (resi 3+24+46+47+48+50+66+76+77+79+80+82+86+87+88+91+93+95+118+1
 color green, passive
 ```
 Are the passive residues well-defined?
+
 *You can now close both PyMOL sessions*
 
 ## 3.7 Ambiguous restraints
