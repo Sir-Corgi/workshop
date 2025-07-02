@@ -143,7 +143,7 @@ cat *.json
 ```
 This is the format AF3 wants to have the sequences inputted.
 
-### 2.4 Running RFdiffusion
+### 2.4 Running Alphafold3
 Now we are ready to run the AF3 prediction.
 ```bash
 sbatch afprediction_hp1.sh
