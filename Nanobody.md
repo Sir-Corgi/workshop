@@ -8,6 +8,14 @@ RFantibody is a pipeline for the structure-based design of _de novo_ antibodies 
 > [!NOTE]
 > Please keep in mind that the RFantibody pipeline is still in progress and has not been released for use on ALICE.
 
+-----
+
+![Generated Nanobody using RFantibody using DRAM1 as target](assets/rfantibody_af3_rf2.png)
+- Purple: Nanobody, based on the scaffold [3eak](https://www.rcsb.org/structure/3EAK)
+- Blue: Target protein, [q9dc58](https://www.uniprot.org/uniprotkb/Q9DC58/entry)
+- Green and Pink: The resudues that are in close proximity (>3.5A) of one another, potenially interacting
+
+
 ## 4.1 HLT file format
 
 We must pass structures between the different steps of the RFantibody pipeline. Each step of the pipeline must know:
@@ -56,7 +64,7 @@ Let's go through how this command in more detail to understand what these config
 - antibody.target_pdb: A path to the target structure that we wish to design antibodies against.
 - antibody.framework_pdb: A path to the HLT-formatted antibody framework that we wish to use for our design. RFdiffusion will only design the structure and sequence of regions of the framework which are annotated as loops, this allows us to design the dock and loops of already optimized frameworks.
 - inference.ckpt_override_path: The path to the set of RFdiffusion model weights we will use for inference
-- ppi.hotspot_res: A list of hotspot residues that define our epitope. These are provided in the same format as in vanilla RFdiffusion. We discuss selecting hotspots in more detail [here](#Target-site-selection).
+- ppi.hotspot_res: A list of hotspot residues that define our epitope. These are provided in the same format as in vanilla RFdiffusion. We discuss selecting hotspots in more detail later.
 - antibody.design_loops: A dictionary that maps each CDR loop to a range of allowed loop lengths. The length of each loop is sampled uniformly from this range and is sampled independently of the lengths sampled for other loops. If a CDR loop exists in the framework but is not in the dict, this CDR loop will have its sequence and structure fixed during design. If a CDR loop is included in the dict but no range of lengths is provided, this CDR loop will have its sequence and structure designed but only with the length of the loop that is provided in the framework structure.
 - inference.num_designs: The number of designs we should generate.
 - inference.output_prefix: The prefix of the .pdb file outputs that we will generate.
@@ -98,4 +106,44 @@ The final step of the RFantibody pipeline is to use our antibody-finetuned RF2 t
 By default this will run with 10 recycling iterations and with 10% of hotspots provided to the model. 
 
 > [!NOTE]
-> We don't yet know what combination of these hyperparameters will be most predictive of design success but it should be possible to tune these values once we have data on more antibody and nanobody campaigns.
+> The developers said: "We don't yet know what combination of these hyperparameters will be most predictive of design success but it should be possible to tune these values once we have data on more antibody and nanobody campaigns."
+
+At it's simplest, RF2 may be run on a directory of HLT-formatted `.pdb` files using the following command:
+```
+# From inside of the rfantibody container
+
+poetry run python /home/scripts/rf2_predict.py \
+    input.pdb_dir=/path/to/inputdir \
+    output.pdb_dir=/path/to/outputdir
+```
+
+### Practical considerations for antibody design
+
+Designing antibodies is similar to designing _de novo_ binders but is in an earlier stage of development. Here we share advice and learnings on how best to use this pipeline to design antibodies which will work experimentally. We expect some of this advice to change as more antibody design campaigns are performed and best-practices crystallize. Several of these sections are adapted from the analogous section of the RFdiffusion README as these two methods share many similarities and the advice applies to both.
+
+### Target site selection
+
+Not every site on a target protein is a good candidate for antibody design. For a site to be an attractive candidate for binding it should have >~3 hydrophobic residues for the binder to interact with. Binding to charged polar sites is still quite hard. Binding to sites with glycans close to them is also hard since they often become ordered upon binding and you will take an energetic hit for that. Binding to unstructured loops has historically been hard but [this paper](https://www.nature.com/articles/s41586-023-06953-1) outlines a strategy to use RFdiffusion to bind unstructured peptides which share much in common unstructured loops, using this strategy should work with antibodies but depending on the flexibility of the loop, you will pay an energetic price for ordering the loop during binding.
+
+### Hotspots
+
+Hotspots are a feature that is integrated into the model to allow for the control of the site on the target which the antibody will interact with. During training, when you classify a target residue as a hotspot if it has an average Cβ distance to the closest 5 antibody CDR residues of less than 8 Angstroms. Of all of the hotspots which are identified on the target 0-100% of these hotspots are actually provided to the model and the rest are masked. RFantibody is more sensitive to exactly which hotspots are selected than vanilla RFdiffusion is.
+
+> [!IMPORTANT]
+> Where RFdiffusion tends to generative long helices when given a bad set of hotspots, RFantibody will generally just generate an undocked antibody if a bad set of hotspots is given.
+
+### Choosing CDR lengths
+
+The loop ranges that the developers used for our design campaigns are provided in the RFdiffusion example files. Determining these ranges by looking at the frequency of naturally occuring lengths for each loop and trying to cover most of the density with our range.
+
+### Filtering Strategies
+
+It's recommend to filter based on the following minimal critieria: <br />
+<br />
+RF2 pAE < 10 <br />
+RMSD (design versus RF2 predicted) < 2&#197; <br />
+It may also be helpful to filter by Rosetta ddG < -20 <br />
+<br />
+The lack of an effective filter is the main limitation of the RFantibody pipeline at the moment. The version of RF2 that we provide may show weak enrichment of binders over non-binders in some cases but more data is needed to make this conclusion convincingly. Newly available structure prediction models such as AF3 present a promising alternative to RF2 and we are in the process of evaluating these models for predictivity on our design campaigns.
+
+
