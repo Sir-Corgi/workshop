@@ -8,7 +8,7 @@ Why use HADDOCK3 instead of the HADDOCK2.4?
 Move yourself, using `cd`, into the haddock3 folder:
 
 ```bash
-cd ../haddock3
+cd ../../haddock3
 ls
 ```
 
