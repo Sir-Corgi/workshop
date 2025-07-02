@@ -42,7 +42,7 @@ python /data1/projects/pi-vriesendorpb/shared/RFdiffusion_forked/scripts/run_inf
 	scaffoldguided.target_path=/data1/projects/pi-vriesendorpb/shared/RFdiffusion_forked/inputs/2qud_A_renum.pdb \
 	inference.output_prefix=/data1/projects/pi-vriesendorpb/shared/outputs/${SLURM_JOB_NAME}_output \
 	scaffoldguided.scaffoldguided=True \
-	'ppi.hotspot_res=[A5,A9,A10,A11,A12]' \
+	'ppi.hotspot_res=[placeholder]' \
 	scaffoldguided.target_pdb=True \
 	scaffoldguided.target_ss=/data1/projects/pi-vriesendorpb/shared/RFdiffusion_forked/inputs/2qud_A_renum_ss.pt \
 	scaffoldguided.target_adj=/data1/projects/pi-vriesendorpb/shared/RFdiffusion_forked/inputs/2qud_A_renum_adj.pt \
