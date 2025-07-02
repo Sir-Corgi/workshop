@@ -13,10 +13,24 @@ You can start with either:
 
 ## Install
 To follow this workshops workflow, install the following, onto your laptop or computer:
-- [PyMOL](https://www.pymol.org/)
-- [MobaXterm home edition](https://mobaxterm.mobatek.net/download.html)
+- [PyMOL](https://www.pymol.org/).
+- [MobaXterm home edition](https://mobaxterm.mobatek.net/download.html).
+	- Log in using the instructions laying around.
+
 
 ## Download
+First, lets create your own folder:
+
+```bash
+mkdir <your_name>
+```
+
+Then move into your freshly made folder by running:
+
+```bash
+cd <your_name>
+```
+
 Download the files by cloning the github onto alice:
 
 ```bash
@@ -36,7 +50,6 @@ Please check the box in the bottom left corner that says "Follow terminal folder
 
 Run the following
 ```bash
-ls workshop
 cd workshop
 ls
 ```
