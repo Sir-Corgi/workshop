@@ -3,6 +3,8 @@ Welcome to the workshop, we're happy to have you.
 In this workshop you can do antibody-antigen docking using HADDOCK3, _de novo_ binding-protein design using RFdiffusion and _de novo_ nanobody design using RFantibody.
 You can choose what you want to do!
 
+![Workflow](assets/workflow_cut.png)
+
 You can start with either:
 - 1.0 Binding-protein design, RFdiffusion
 	- 2.0 Alphafold3
