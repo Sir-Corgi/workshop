@@ -76,7 +76,14 @@ Now you can chose to follow one of the modules I have prepared for you!
 Have fun, and dont hesitate to ask questions!
 
 
+-----
 
+#### Acknowledgment
 
+If you found this workshop helpful or used any of its materials in your own work, research, or teaching, please consider acknowledging it. A simple note like the following goes a long way:
+
+> “This work is based on materials from a workshop by Jesper ([Sir-Corgi](https://github.com/Sir-Corgi)).”
+
+For a full list of tools and citations used in this workshop, see [CITATIONS.md](CITATIONS.md).
 
 
